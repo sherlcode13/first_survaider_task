@@ -10,4 +10,8 @@ lib
 #OtherFiles
 relation.json
 reviews.json
-
+relation.json~
+relation.json~
+Hotels.json
+survaiderTask.pdf
+ .gitignore
