@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h3>{{hotelName}}</h3>
+    <nvd3 options="options" data="data"></nvd3>
+</div>
+
+<div class="container" ng-init="ctr=0">
+	<div class="col-md-12">
+		<h3>Latest Reviews</h3>
+	</div>
+	<div class="col-md-12" ng-repeat="rev in reviews">
+	<div class="row">
+		<p>{{ctr + $index}}</p>
+	   <p>{{rev.review}}</p>
+	   <hr>
+	</div>
+	</div>
+	<div class="col-md-6" ng-show="reviews.length > 0">
+		<div class="row">
+			<button type="button" class="btn btn-primary" ng-click="previousReviews()"> Prev </button>
+			<button type="button" class="btn btn-primary" ng-click="nextReviews()"> Next </button>
+		</div>
+	</div>
+</div>

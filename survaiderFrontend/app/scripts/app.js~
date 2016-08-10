@@ -1,0 +1,36 @@
+'use strict';
+
+/**
+ * @ngdoc overview
+ * @name survaiderFrontendApp
+ * @description
+ * # survaiderFrontendApp
+ *
+ * Main module of the application.
+ */
+angular
+  .module('survaiderFrontendApp', [
+    'ngAnimate',
+    'ngCookies',
+    'ngResource',
+    'ngRoute',
+    'ngSanitize',
+    'ngTouch',
+    'ui.router'
+  ])
+  .config(function ($stateProvider,$urlRouterProvider) {
+	
+   $urlRouterProvider.otherwise('/');	
+    $stateProvider
+      .state('app',{
+         abtract:true
+      })
+      .state('app.home', {
+        url : '/',
+        views:{
+		templateUrl: 'views/main.html',
+		controller: 'MainCtrl',
+		controllerAs: 'main'
+        }
+      });
+  });

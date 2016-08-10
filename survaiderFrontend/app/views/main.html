@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h3>{{hotelName}}</h3>
+    <nvd3 options="options" data="data"></nvd3>
+</div>
+
+<div class="row marketing">
+  <div class="col-md-12">
+    <div class="row">
+        <button type="button" ng-repeat="u in units"class="btn btn-success" ui-sref="app.unit({id:u.property_id,name:u.name})">{{u.name}}</button>
+    </div>
+  </div>
+</div>
