@@ -23,6 +23,5 @@ def get():
 			return jsonify({"status":"ok","data":data})
 		else:
 			return response_error("There is no info about this unit.")
-	
 
 

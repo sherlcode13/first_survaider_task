@@ -13,10 +13,12 @@ hotel_api = Blueprint('hotel_api',__name__)
 @hotel_api.route('/hotel',methods=["GET"])
 def get():
 	name = request.args.get("name","")
+	print name
 	if name:
-		print(name)
+		print name
 		units = db.Hotels.find_one({"parent.name":name})
 		if units:
+			print "I'm working."
 			return request_utility(db,units)
 		else:
 			return response_error("This hotel name does not exist")

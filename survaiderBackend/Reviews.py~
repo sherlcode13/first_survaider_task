@@ -34,10 +34,10 @@ def get():
 			else:
 				cursor = db.Reviews.find({"property_id":id, "_id":{"$gt" : start_id}}).limit(10).sort([["_id",-1]])
 		
-		#print cursor
+		print cursor
 		
 		review_data = [{"property_id":c['property_id'],"review":c['review'],"review_link":c['review_link'],"rating":c['rating'],"_id":str(c["_id"])} for c in cursor]
-		#print review_data
+		print review_data
 		if len(review_data) > 0 :
 			return jsonify({"status":"ok","data":review_data})
 		else:

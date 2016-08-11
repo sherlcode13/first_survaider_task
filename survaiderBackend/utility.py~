@@ -12,7 +12,7 @@ def request_utility(db,units):
 	units = dumps(units)
 	if len(graph_data) > 0:
 		data = {"units":units,"g_data":graph_data}
-		#print "I'm here."
+		print "I'm here."
 		return jsonify({"status": "ok", "data": data})
 	else:
 		return response_error("This hotel has no unit.")
