@@ -5,10 +5,7 @@ from bson.json_util import dumps,loads
 from flask_restful import Api
 from flask.ext.pymongo import PyMongo
 from pymongo import MongoClient
-
-con = MongoClient('localhost',27017)
-db = con.suvaider
-
+from survaiderBackend.database import *
 review_api = Blueprint('review_api',__name__)
 
 @review_api.route('/hotel/reviews',methods=["GET"])

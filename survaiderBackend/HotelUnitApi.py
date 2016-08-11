@@ -5,9 +5,7 @@ from flask_restful import Api
 from flask.ext.pymongo import PyMongo
 from pymongo import MongoClient
 from survaiderBackend.utility import *
-
-con = MongoClient('localhost',27017)
-db = con.suvaider
+from survaiderBackend.database import *
 
 hotel_unit_api = Blueprint('hotel_unit_api',__name__)
 
