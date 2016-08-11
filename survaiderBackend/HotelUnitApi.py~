@@ -4,7 +4,7 @@ from bson.json_util import dumps,loads
 from flask_restful import Api
 from flask.ext.pymongo import PyMongo
 from pymongo import MongoClient
-
+from suvaiderBackend.utility import *
 
 con = MongoClient('localhost',27017)
 db = con.suvaider
@@ -23,5 +23,7 @@ def get():
 			return jsonify({"status":"ok","data":data})
 		else:
 			return response_error("There is no info about this unit.")
+	else:
+		return response_error("Please provide property_id of units")
 
 
